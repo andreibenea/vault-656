@@ -23,19 +23,26 @@ class World:
 
     def get_scene(self, scene_id: str) -> dict:
         """Return the scene data for a given scene ID."""
-        ...
+        scene = self.scenes[scene_id]
+        return scene
 
     def get_npc(self, npc_id: str) -> "NonPlayerCharacter":
         """Return an NPC instance by its ID."""
-        ...
+        npc = self.npcs[npc_id]
+        return npc
 
     def move_npc(self, npc_id: str, new_scene_id: str):
         """Update an NPC's current location."""
-        ...
+        npc = self.get_npc(npc_id)
+        npc.scene_id = new_scene_id
 
-    def scene_has_npc(self, scene_id: str) -> list[str]:
+    def scene_npcs(self, scene_id: str) -> list[str]:
         """
         Return list of NPC IDs currently present in a given scene.
         Useful for 'talk' commands or automatic scene descriptions.
         """
-        ...
+        scene_npcs = []
+        for npc in self.npcs:
+            if self.npcs[npc].scene_id == scene_id:
+                scene_npcs.append(self.npcs[npc])
+        return scene_npcs
