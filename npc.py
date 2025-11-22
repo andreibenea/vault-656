@@ -19,10 +19,15 @@ class NonPlayerCharacter:
         self.name = name
         self.scene_id = scene_id
         self.dialog_id = dialog_id
+    
 
     def talk(self, game: "Game") -> list[str]:
         """
         Run one step of conversation with this NPC, based on dialog_id and game state.
-        Returns a list of output lines to display.
+        Prints NPC reply.
         """
-        ...
+        dialogue = game.dialogue
+        options = dialogue["options"]
+        for option in options:
+            if game.selected_reply == option:
+                print(f"{options[option]["npc"]}")

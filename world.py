@@ -46,3 +46,18 @@ class World:
             if self.npcs[npc].scene_id == scene_id:
                 scene_npcs.append(self.npcs[npc])
         return scene_npcs
+
+    def scene_items(self, scene_id: str) -> dict:
+        """
+        Return list of items currently present in a given scene.
+        """
+        self.items = self.scenes[scene_id]["objects"]
+        return self.items
+    
+    def remove_item(self, item_id: str):
+        """
+        Remove an item from the scene.
+        """
+        # print(f"####DEBUG - items before deletion:\n{self.items}")
+        del self.items[item_id]
+        # print(f"####DEBUG - items after deletion:\n{self.items}")

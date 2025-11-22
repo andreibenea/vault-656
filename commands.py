@@ -1,0 +1,15 @@
+COMMANDS = {
+    "help": {"action": "help", "min_args": 0, "max_args": 0},
+    "info": {"action": "help", "min_args": 0, "max_args": 0},
+    "look": {"action": "look", "min_args": 0, "max_args": 1},
+    "look around": {"action": "look", "min_args": 0, "max_args": 1},
+    "examine": {"action": "examine", "min_args": 1, "max_args": 1},
+    "inspect": {"action": "examine", "min_args": 1, "max_args": 1},
+    "use": {"action": "use", "min_args": 1, "max_args": 1},
+    "take": {"action": "take", "min_args": 1, "max_args": 1},
+    "talk": {"action": "talk", "min_args": 1, "max_args": 1},
+    "exit": {"action": "exit_game", "min_args": 0, "max_args": 1},
+    "exit game": {"action": "exit_game", "min_args": 0, "max_args": 1},
+    "quit": {"action": "exit_game", "min_args": 0, "max_args": 1},
+    "quit game": {"action": "exit_game", "min_args": 0, "max_args": 1},
+}
